@@ -1,6 +1,7 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
+import {StatusBar} from 'expo-status-bar';
 
 import { AntDesign } from '@expo/vector-icons';
 
@@ -15,29 +16,32 @@ function TabBarIcon(props: {
 export default function TabLayout() {
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: '#fff',
-        tabBarInactiveTintColor: '#2C2A4A',
-        headerShown: false,
-        tabBarStyle: {
-          backgroundColor: '#4F518C'
-        }
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Inicio',
-          tabBarIcon: ({ color, size }) => <AntDesign name="home" size={size} color={color} />
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Chaves',
-          tabBarIcon: ({ color, size }) => <AntDesign name="book" size={size} color={color} />,
-        }}
-      />
-    </Tabs>
+    <>
+      <StatusBar style='dark'/>
+      <Tabs
+        screenOptions={{
+          tabBarActiveTintColor: '#fff',
+          tabBarInactiveTintColor: '#2C2A4A',
+          headerShown: false,
+          tabBarStyle: {
+            backgroundColor: '#4F518C'
+          }
+        }}>
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: 'Inicio',
+            tabBarIcon: ({ color, size }) => <AntDesign name="home" size={size} color={color} />
+          }}
+        />
+        <Tabs.Screen
+          name="two"
+          options={{
+            title: 'Chaves',
+            tabBarIcon: ({ color, size }) => <AntDesign name="book" size={size} color={color} />,
+          }}
+        />
+      </Tabs>
+    </>
   );
 }

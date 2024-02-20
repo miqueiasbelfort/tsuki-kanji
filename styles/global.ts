@@ -28,3 +28,11 @@ export const Input = styled.TextInput`
     height: 100%;
     width: 90%;
 `;
+
+export const TabsHeader = styled.View`
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    align-items: flex-end;
+    justify-content: center;
+`;
