@@ -20,3 +20,12 @@ export const TextInput = styled.TextInput`
     border-radius: 10px;
     padding: 10px;
 `;
+
+export const ContentCards = styled.View`
+    flex: 1;
+    margin-top: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+`;
