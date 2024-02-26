@@ -1,30 +1,23 @@
 import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { View } from 'react-native';
 import { Tabs } from 'expo-router';
 import {StatusBar} from 'expo-status-bar';
 
 import { AntDesign } from '@expo/vector-icons';
 
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
-
 export default function TabLayout() {
 
   return (
-    <>
+    <View style={{flex: 1, backgroundColor: '#f0f0f0'}}>
       <StatusBar style='dark'/>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: '#fff',
-          tabBarInactiveTintColor: '#2C2A4A',
+          tabBarActiveTintColor: '#2C2A4A',
+          tabBarInactiveTintColor: '#907AD6',
           headerShown: false,
           tabBarStyle: {
-            backgroundColor: '#4F518C'
+            backgroundColor: '#fff',
+            borderTopWidth: 1,
           }
         }}>
         <Tabs.Screen
@@ -35,13 +28,13 @@ export default function TabLayout() {
           }}
         />
         <Tabs.Screen
-          name="two"
+          name="read"
           options={{
-            title: 'Chaves',
+            title: 'Ler',
             tabBarIcon: ({ color, size }) => <AntDesign name="book" size={size} color={color} />,
           }}
         />
       </Tabs>
-    </>
+    </View>
   );
 }

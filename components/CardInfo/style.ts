@@ -7,11 +7,13 @@ export const Container = styled.SafeAreaView`
     background-color: rgba(0,0,0,0.5);
 `;
 export const Content = styled.View`
-    flex: .7;
     width: 90%;
     background-color: #fff;
     border-radius: 10px;
-    padding: 0 10px;
+    padding-bottom: 20px;
+    padding-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 `;
 
 export const Header = styled.View`

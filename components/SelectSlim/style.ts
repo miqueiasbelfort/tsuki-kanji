@@ -16,10 +16,13 @@ export const ModalScreen = styled.View`
     background-color: rgba(0,0,0,0.5);
 `;
 export const ModalScreenView = styled.View`
-    flex: .52;
     width: 90%;
     background-color: #fff;
     border-radius: 10px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
 `;
 export const ModalHeader = styled.View`
     flex-direction: row;

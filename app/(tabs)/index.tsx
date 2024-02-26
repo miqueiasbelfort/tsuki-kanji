@@ -51,7 +51,7 @@ export default function TabOneScreen() {
   const [seeCardInfo, setSeeCardInfo] = useState(false);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1}}>
       <Container>
 
         <TabsHeader>
