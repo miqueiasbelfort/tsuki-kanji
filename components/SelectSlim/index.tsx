@@ -38,6 +38,10 @@ export default function SelectSlim({ text, itens }: Props) {
     const [placeholder, setPlaceholder] = useState(text);
     const [modalVisible, setModalVisible] = useState(false);
 
+    const closeModal = () => {
+        setModalVisible(false);
+    };
+
     return (
         <>
             <Select onPress={() => setModalVisible(true)}>
@@ -54,7 +58,7 @@ export default function SelectSlim({ text, itens }: Props) {
                     <ModalScreenView>
                         <ModalHeader>
                             <ModalTitle>Níveis de Kanjis</ModalTitle>
-                            <ModalBtnExit onPress={() => setModalVisible(false)}>
+                            <ModalBtnExit onPress={closeModal}>
                                 <EvilIcons name="close" size={30} color="black" />
                             </ModalBtnExit>
                         </ModalHeader>
@@ -63,18 +67,22 @@ export default function SelectSlim({ text, itens }: Props) {
                                 {itens.map((item) => (
                                     <ModalItem key={item.value} onPress={() => setPlaceholder(item.value)}>
                                         <View style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}>
-                                            <ColorIconc backgroundColor={item.iconColor} />
+                                            <ColorIconc backgroundColor={'#DABFFF'} />
                                             <ModalItemText>{item.name}</ModalItemText>
                                         </View>
                                         <Checkbox
                                             style={{margin: 8}}
                                             value={item.value == placeholder}
                                             onValueChange={() => {}}
-                                            color={item.value == placeholder ? item.iconColor : undefined}
+                                            color={item.value == placeholder ? '#DABFFF' : undefined}
                                         />
                                     </ModalItem>
                                 ))}
-                                
+                                <View style={{alignItems: 'flex-end'}}>
+                                    <ButtonOk onPress={closeModal}>
+                                        <ButtonOkText>Ok</ButtonOkText>
+                                    </ButtonOk>
+                                </View>
                             </ModalContents>
                         </ModalContainerScroll>
                     </ModalScreenView>

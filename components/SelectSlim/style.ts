@@ -16,7 +16,7 @@ export const ModalScreen = styled.View`
     background-color: rgba(0,0,0,0.5);
 `;
 export const ModalScreenView = styled.View`
-    flex: .5;
+    flex: .52;
     width: 90%;
     background-color: #fff;
     border-radius: 10px;

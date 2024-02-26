@@ -3,9 +3,13 @@ import React from 'react';
 
 import { Container, Text } from './styles';
 
-export default function MiniCard() {
+interface Props {
+  onPress: () => void;
+};
+
+export default function MiniCard({onPress}: Props) {
   return (
-    <Container>
+    <Container onPress={() => onPress()}>
         <Text>行</Text>
     </Container>
   );

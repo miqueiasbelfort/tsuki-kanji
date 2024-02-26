@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import { SafeAreaView, View, ScrollView } from 'react-native';
 
 // styles
@@ -15,6 +16,7 @@ import UserPhoto from '@/components/UserPhoto';
 import SelectSlim from '@/components/SelectSlim';
 import MiniCard from '@/components/MiniCard';
 import GridView from '@/components/GridView';
+import CardInfo from '@/components/CardInfo';
 
 const arraysTest = [
   {
@@ -45,6 +47,9 @@ const arraysTest = [
 ];
 
 export default function TabOneScreen() {
+
+  const [seeCardInfo, setSeeCardInfo] = useState(false);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Container>
@@ -68,12 +73,17 @@ export default function TabOneScreen() {
             col={4}
             renderItem={(item) => {
               return (
-                <MiniCard />
+                <MiniCard onPress={() => setSeeCardInfo(!seeCardInfo)}/>
               );
             }}
           />
         </ScrollView>
 
+
+        <CardInfo
+          modalVisible={seeCardInfo}
+          setModalVisible={setSeeCardInfo}
+        />
       </Container>
     </SafeAreaView>
   );
